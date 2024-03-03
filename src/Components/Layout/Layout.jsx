@@ -4,24 +4,31 @@ import { Icon } from '@iconify/react';
 const Layout = () => {
   return (
     <>
-      <div className='grid grid-cols-1 md:grid-cols-6 lg:grid-cols-10 mt-5'>
-        <div className='md:col-span-2 rounded-[10px] mx-3 md:m-0 py-[30px] px-[30px] bg-slate-700  border border-[#E2E2E2] '>
-          <div className='w-[50px] h-[50px] border border-[#E2E2E2 rounded-[10px] flex items-center justify-center mb-[40px] dark:border-[#566279]'>
-            <Icon className='dark:text-slate-300 text-slate-600' icon="mingcute:location-3-line" width="28" />
+      <div className='flex w-[100%] bg-[#e5e7eb] '>
+        <div className='w-72 h-screen mx-3 md:m-0  bg-slate-700'>
+          <div className='h-[70px] bg-slate-300'>
+            <div>
+              <img src="" alt="" />
+            </div>
           </div>
-          <div>
-            <h1 className='text-[22px] font-semibold text-[#222831] pb-[5px] dark:text-white'>Location</h1>
-            <p className='text-[16px] dark:text-slate-300 text-slate-600'>Bonani, Dhaka, Bangladesh.</p>
-          </div>
+          <ul>
+            <li>
+              <a href="#">Hello</a>
+            </li>
+          </ul>
         </div>
-        <div className='md:col-span-8 rounded-[10px] mx-3 md:m-0 py-[30px] px-[30px] bg-slate-300 border border-[#E2E2E2]'>
-          <div className='w-[50px] h-[50px] border border-[#E2E2E2 rounded-[10px] flex items-center justify-center mb-[40px] dark:border-[#566279]'>
-            <Icon className='dark:text-slate-300 text-slate-600' icon="ion:mail-outline" width="28" />
+        <div className='w-[100%] shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px]'>
+          <div className='h-[70px]  bg-white'>
+            <div>
+                <div>
+                  <button><Icon icon="ci:menu-alt-05" width="36" height="36" /></button>
+                </div>
+            </div>
           </div>
           <div>
-            <h1 className='text-[22px] font-semibold text-[#222831] pb-[5px] dark:text-white'>Mail</h1>
-            <p className='text-[16px] dark:text-slate-300 text-slate-600'>sj.tomalahmedraj@gmail.com</p>
-            <a className='underline font-regular mt-3 inline-block text-[#46CC8F]' href="mailto:sj.tomalahmedraj@gmail.com">Send Mail</a>
+            <div>
+              hii
+            </div>
           </div>
         </div>
       </div>
