@@ -8,3 +8,24 @@ a{
 ul li{
   list-style-type: none;
 }
+
+.menu-click{
+  width: 100px;
+}
+.menu-bar{
+  display: none;
+}
+
+@media (max-width: 768px){
+  .menu-click{
+    position: absolute;
+    left: -100%;
+  }
+  .menu-clicked{
+    position: absolute;
+    left: 1;
+  }
+  .menu-bar{
+    display: block;
+  }
+}

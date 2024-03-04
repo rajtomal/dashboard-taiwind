@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Icon } from '@iconify/react';
 import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
@@ -15,6 +15,7 @@ import Logout from '@mui/icons-material/Logout';
 import profile from '../../assets/profile.jpg'
 
 const Layout = () => {
+  const [clickbtn, onClick]=useState(false)
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -23,13 +24,18 @@ const Layout = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+  const menuHide = () =>{
+    onClick(!clickbtn)
+  }
   return (
     <>
       <div className='flex w-[100%] bg-[#e5e7eb] '>
-        <div className='w-72 h-screen mx-3 md:m-0  bg-slate-700'>
-          <div className='h-[70px] bg-slate-300'>
+        <div className={` h-screen md:m-0  bg-slate-700 ${clickbtn ? 'menu-click': 'w-72 menu-clicked'}`}>
+          <div className='h-[70px] border-b border-[#505967]'>
             <div>
               <img src="" alt="" />
+              <button className={`${clickbtn ? '': 'menu-bar'} border menu-bar border-[#ddd] p-1 text-[#ddd] mr-4 rounded-sm absolute top-4 right-0`} onClick={menuHide}><Icon icon="gg:close" width="24" height="24" /></button>
+
             </div>
           </div>
           <ul>
@@ -42,7 +48,7 @@ const Layout = () => {
           <div className='h-[70px]  bg-white'>
             <div className='flex justify-between items-center h-[100%] px-4'>
               <div>
-                <button className='border border-[#ddd] p-1 rounded-sm'><Icon icon="ci:menu-alt-05" width="36" height="36" /></button>
+              <button className='border border-[#ddd] p-1 rounded-sm' onClick={menuHide}><Icon icon="solar:hamburger-menu-outline" width="24" height="24" /></button>
               </div>
               <div>
                 <React.Fragment>
