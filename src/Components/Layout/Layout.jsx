@@ -13,9 +13,10 @@ import PersonAdd from '@mui/icons-material/PersonAdd';
 import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
 import profile from '../../assets/profile.jpg'
+import logo from '../../assets/logo.png'
 
 const Layout = () => {
-  const [clickbtn, onClick]=useState(false)
+  const [clickbtn, onClick] = useState(false)
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -24,23 +25,29 @@ const Layout = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
-  const menuHide = () =>{
+  const menuHide = () => {
     onClick(!clickbtn)
   }
   return (
     <>
       <div className='flex w-[100%] bg-[#e5e7eb] '>
-        <div className={` h-screen md:m-0  bg-slate-700 ${clickbtn ? 'menu-click': 'w-72 menu-clicked'}`}>
+        <div className={` h-screen md:m-0  bg-slate-700  ${clickbtn ? 'menu-click' : 'menu-clicked'}`}>
           <div className='h-[70px] border-b border-[#505967]'>
-            <div>
-              <img src="" alt="" />
-              <button className={`${clickbtn ? '': 'menu-bar'} border menu-bar border-[#ddd] p-1 text-[#ddd] mr-4 rounded-sm absolute top-4 right-0`} onClick={menuHide}><Icon icon="gg:close" width="24" height="24" /></button>
-
+            <div className='flex justify-center items-center'>
+              <div className='h-[70px] flex justify-center items-center'>
+                <img className='w-[130px] ' src={logo} alt="logo" />
+              </div>
+              <div>
+                <button className={`${clickbtn ? '' : 'menu-bar'} border menu-bar border-[#ddd] p-1 text-[#ddd] mr-4 rounded-sm absolute top-4 right-0`} onClick={menuHide}><Icon icon="gg:close" width="24" height="24" /></button>
+              </div>
             </div>
           </div>
-          <ul>
+          <ul className='mt-3'>
             <li>
-              <a href="#">Hello</a>
+              <a className='px-3 py-2 mx-2 bg-[#4d5969] rounded-[5px] text-teal-50 text-[16px] flex items-center' href="#"><Icon className={clickbtn ? "m-auto" : "mr-2"} icon="lucide:home" width={clickbtn ? "26" : "20"} height={clickbtn ? "26" : "20"}  />{clickbtn ? null : <span>Hello</span>}</a>
+            </li>
+            <li>
+              <a className='px-3 py-2 mx-2 my-1 rounded-[5px] text-zinc-400 text-[16px] flex items-center' href="#"><Icon className={clickbtn ? "m-auto" : "mr-2"} icon="lucide:home" width={clickbtn ? "26" : "20"} height={clickbtn ? "26" : "20"} />{clickbtn ? null : <span>Hello</span>}</a>
             </li>
           </ul>
         </div>
@@ -48,7 +55,7 @@ const Layout = () => {
           <div className='h-[70px]  bg-white'>
             <div className='flex justify-between items-center h-[100%] px-4'>
               <div>
-              <button className='border border-[#ddd] p-1 rounded-sm' onClick={menuHide}><Icon icon="solar:hamburger-menu-outline" width="24" height="24" /></button>
+                <button className='border border-[#ddd] p-1 rounded-sm' onClick={menuHide}><Icon icon="solar:hamburger-menu-outline" width="24" height="24" /></button>
               </div>
               <div>
                 <React.Fragment>

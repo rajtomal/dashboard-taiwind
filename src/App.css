@@ -10,16 +10,21 @@ ul li{
 }
 
 .menu-click{
-  width: 100px;
+  width: 70px;
+  transition: all 0.4s ease-in-out;
 }
 .menu-bar{
   display: none;
 }
-
+.menu-clicked{
+    width: 18rem;
+    transition: all 0.4s ease-in-out;
+}
 @media (max-width: 768px){
   .menu-click{
     position: absolute;
     left: -100%;
+    transition: all 0.4s ease-in-out;
   }
   .menu-clicked{
     position: absolute;
