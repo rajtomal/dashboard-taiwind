@@ -51,6 +51,13 @@ ul li {
   transition: all 0.4s ease-in-out;
 }
 
+.main-layout-height {
+  min-height: calc(100vh - 115px);
+}
+.active{
+  background: #4d5969;
+  color: #fff;
+}
 @media (max-width: 1024px) {
   .menu-click {
     position: absolute;

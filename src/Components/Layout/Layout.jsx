@@ -12,10 +12,12 @@ import Tooltip from '@mui/material/Tooltip';
 import PersonAdd from '@mui/icons-material/PersonAdd';
 import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
+import { NavLink , Link } from 'react-router-dom';
 import profile from '../../assets/profile.jpg'
 import logo from '../../assets/logo.png'
 
-const Layout = () => {
+const Layout = ({ children }) => {
+  window.scrollTo(0, 0)
   const [clickbtn, onClick] = useState(false)
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -44,10 +46,10 @@ const Layout = () => {
           </div>
           <ul className='mt-3'>
             <li>
-              <a className='px-3 py-3 mx-2 bg-[#4d5969] rounded-[5px] text-teal-50 text-[16px] flex items-center' href="#"><Icon className={clickbtn ? "m-auto" : "mr-2"} icon="lucide:home" width={clickbtn ? "26" : "20"} height={clickbtn ? "26" : "20"} />{clickbtn ? null : <span>Hello</span>}</a>
+              <NavLink to="/"  className='px-3 py-3 mx-2  rounded-[5px] text-[16px] flex items-center text-zinc-400' href="#"><Icon className={clickbtn ? "m-auto" : "mr-2"} icon="lucide:home" width={clickbtn ? "26" : "20"} height={clickbtn ? "26" : "20"} />{clickbtn ? null : <span>Hello</span>}</NavLink >
             </li>
             <li>
-              <a className='px-3 py-3 mx-2 my-1 rounded-[5px] hover:bg-[#4d5969] hover:text-teal-50 text-zinc-400 text-[16px] flex items-center transition ease-linear delay-100 duration-100' href="#"><Icon className={clickbtn ? "m-auto" : "mr-2"} icon="lucide:home" width={clickbtn ? "26" : "20"} height={clickbtn ? "26" : "20"} />{clickbtn ? null : <span>Hello</span>}</a>
+              <NavLink to="/user"  className='px-3 py-3 mx-2 my-1 rounded-[5px] hover:bg-[#4d5969] hover:text-teal-50 text-zinc-400 text-[16px] flex items-center transition ease-linear delay-100 duration-100' href="#"><Icon className={clickbtn ? "m-auto" : "mr-2"} icon="lucide:home" width={clickbtn ? "26" : "20"} height={clickbtn ? "26" : "20"} />{clickbtn ? null : <span>Hello</span>}</NavLink >
             </li>
           </ul>
         </div>
@@ -139,11 +141,17 @@ const Layout = () => {
             </div>
           </div>
           <div className={`${clickbtn ? 'main-layout-selected' : 'main-layout'}`}>
-            <div className='min-h-[calc(100vh - 115px)] p-3 bg-[#e5e7eb] rounded'>
+            <div className='main-layout-height p-3 bg-[#e5e7eb] rounded'>
               <div className='bg-white'>
-              <p>hiii</p>
+                {children}
               </div>
             </div>
+          <footer className='p-3 px-3 text-center bg-white'>
+            <div className='flex justify-between items-center'>
+            <p className='text-[#9cacb3] text-[14px]'>2024 © Tomal</p>
+            <p className='text-[#9cacb3] text-[14px]'>Design & Development by <a className='text-sky-500 ' target='_blank' href="https://tomalraj.vercel.app/">Tomal Ahmed Raj</a></p>
+            </div>
+          </footer>
           </div>
         </div>
       </div>
